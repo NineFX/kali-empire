@@ -1,9 +1,5 @@
 FROM kalilinux/kali-linux-docker
-MAINTAINER steev@kali.org
 
-RUN echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" > /etc/apt/sources.list
-RUN echo "deb-src http://http.kali.org/kali kali-rolling main contrib non-free" >> /etc/apt/sources.list
-ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get -y update && apt-get -y dist-upgrade
 RUN apt-get install -y make g++ python-dev python-m2crypto swig python-pip libxml2-dev default-jdk libssl-dev wget curl sudo git
 RUN pip install --upgrade urllib3 setuptools pycrypto iptools pydispatcher flask macholib dropbox pyopenssl pyinstaller zlib_wrapper netifaces
